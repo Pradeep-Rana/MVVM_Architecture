@@ -32,7 +32,6 @@
             android:textSize="@dimen/text_size_15sp" />
 
         <View
-            android:id="@+id/lineView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_1dp"
             android:layout_marginTop="@dimen/dimen_20dp"

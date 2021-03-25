@@ -5,18 +5,12 @@
     android:layout_height="match_parent"
     android:background="@color/text_color_white">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/pullToRefresh"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dimen_5dp"
-            tools:listitem="@layout/video_list_itemview" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_5dp"
+        tools:listitem="@layout/video_list_itemview" />
 
     <TextView
         android:id="@+id/noDataFound"

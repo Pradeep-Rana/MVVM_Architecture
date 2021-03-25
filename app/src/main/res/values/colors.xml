@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3D56E1</color>
+    <color name="colorPrimaryDark">#0425DA</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="colorAccentDark">#FF9800</color>
+
+    <color name="color_mustard">#e4b100</color>
+    <color name="color_mustard_opacity_15">#26e4b100</color>
+    <color name="color_shit">#856700</color>
+    <color name="color_black_dark">#000</color>
+    <color name="color_black_three">#000000</color>
+    <color name="color_black_six">#363636</color>
+    <color name="color_black_seven">#2f2f2f</color>
+    <color name="color_black">#202020</color>
+    <color name="color_blue">#3347B5</color>
+    <color name="color_white">#FDFDFD</color>
+    <color name="text_color_white">#FFFFFF</color>
+    <color name="text_color_pale_grey">#fbfbfd</color>
+    <color name="text_color_greyish">#a7a7a7</color>
+    <color name="selected_tab_color">#ADADAD</color>
+    <color name="login_bg_color">#202020</color>
+    <color name="text_color_greyish_brown">#504f4f</color>
+    <color name="color_lite_grey">#E2E2E2</color>
+    <color name="text_hint_clr">#D3D1D1</color>
+    <color name="orange_red">#ff3200</color>
+    <color name="red">#d90101</color>
+    <color name="cloud_blue">#d5d3dd</color>
+    <color name="color_black_two">#383838</color>
+    <color name="custom_dialog_bg_color">#323232</color>
+    <color name="setting_img_bg_color">#545454</color>
+    <color name="view_bg_color">#1A1A1A</color>
+    <color name="green_online_status_color">#00D100</color>
+    <color name="poision_green_color">#40e400</color>
+    <color name="arrow_color">#353535</color>
+    <color name="color_black_four">#080808</color>
+    <color name="color_greyish_brown">#565656</color>
+    <color name="color_greyish_brown_three">#414141</color>
+    <color name="brownish_grey">#6e6e6e</color>
+    <color name="color_black_five">#070707</color>
+    <color name="warm_grey_two">#8b8b8b</color>
+    <color name="greyish_brown_four">#4f4e4e</color>
+
+    <color name="color_transparent_grey">#2E2E2E</color>
+    <color name="color_scan_bg">#181818</color>
+    <color name="color_pinkish_grey">#bdbdbd</color>
+    <color name="camo_green">#6a5723</color>
+    <color name="background_screen_color">#080808</color>
+    <color name="dialog_background_color">#86080808</color>
+    <color name="brownish_grey_two">#666666</color>
+    <color name="bright_blue">#007eff</color>
+    <color name="color_greyish_brown_scan">#585757</color>
+    <color name="color_greyish_lite_brown_scan">#434343</color>
+    <color name="start_scan__circle_color">#575656</color>
+    <color name="color_beige">#f1ede0</color>
+    <color name="orangey_red_color">#f93e3e</color>
+</resources>

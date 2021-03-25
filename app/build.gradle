@@ -1,0 +1,136 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.extreme.zebra"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.7.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+    }
+    buildTypes {
+        debug {
+            shrinkResources false //shrink resource
+            minifyEnabled false  // shrink
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources true //shrink resource
+            minifyEnabled true  // shrink
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        innerTest {
+            matchingFallbacks = ['debug', 'release']
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    /*
+    *Build Flavors
+    */
+    flavorDimensions "first"
+    productFlavors {
+        dev {
+            dimension "first"
+            getProps('./config/dev.props').each { p ->
+                buildConfigField 'String', p.key, p.value
+            }
+        }
+        qa {
+            dimension "first"
+            getProps('./config/qa.props').each { p ->
+                buildConfigField 'String', p.key, p.value
+            }
+        }
+        prod {
+            dimension "first"
+            getProps('./config/prod.props').each { p ->
+                buildConfigField 'String', p.key, p.value
+            }
+        }
+    }
+}
+
+def getProps(path) {
+    Properties props = new Properties()
+    props.load(new FileInputStream(file(path)))
+    return props
+}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+
+    //Multi dex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //Retrofit and GSON
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.6.0"
+
+    //Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    //New Material Design
+    implementation 'com.google.android.material:material:1.4.0-alpha01'
+
+    implementation 'com.xwray:groupie:2.3.0'
+    implementation 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
+    implementation 'com.xwray:groupie-databinding:2.3.0'
+
+    implementation "androidx.preference:preference-ktx:1.1.1"
+
+    implementation 'com.squareup.okhttp3:okhttp:4.8.0'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.6.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //Test Libraries
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    androidTestImplementation 'org.mockito:mockito-core:3.1.0'
+    androidTestImplementation 'org.mockito:mockito-android:3.1.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+
+    //Fast networking
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+
+    kapt "androidx.lifecycle:lifecycle-compiler:2.3.0"
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    // Room dependencies
+    implementation 'androidx.room:room-runtime:2.2.6'
+    kapt "androidx.room:room-compiler:2.2.6"
+}

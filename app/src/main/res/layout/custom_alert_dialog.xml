@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_40dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_40dp"
+            android:gravity="center"
+            android:text="Congratulations" />
+
+        <TextView
+            android:id="@+id/mTvDescriptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_40dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_40dp"
+            android:gravity="center"
+            android:textColor="@color/text_color_pale_grey"
+            android:textSize="@dimen/text_size_15sp" />
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@color/color_black_three"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/btnOk"
+            android:layout_width="@dimen/dimen_120dp"
+            android:layout_height="@dimen/dimen_40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:gravity="center"
+            android:text="@string/ok"
+            android:textColor="@color/color_black_three"
+            android:textSize="@dimen/text_size_14sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/twoButtonContainerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:background="@color/color_black_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:layout_marginEnd="@dimen/dimen_20dp"
+                android:layout_marginBottom="@dimen/dimen_15dp">
+
+                <TextView
+                    android:id="@+id/btnNo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/dimen_17dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/no"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:id="@+id/btnYes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dimen_17dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/yes"
+                    android:textSize="@dimen/text_size_14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+

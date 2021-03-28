@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="News detail will be shown here. I can develop any king of UI as per requirement. So right now I am keeping this screen with this text only. Following technologies has been used in this demo: MVVM, Kotlin(100%), Coroutine, Asynctask, Fast networking, Constraint Layout, Coroutines, Glide etc"
+        android:text="News detail will be shown here. I can develop any king of UI as per requirement. So right now I am keeping this screen with this text only. Following technologies has been used in this demo: MVVM, Kotlin(100%), Coroutine, Asynctask, Fast networking, Constraint Layout, Coroutines, Glide, Tablayout, Recyclerview, Room DB etc"
         android:textSize="@dimen/text_size_16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -73,7 +73,7 @@ class HistoryFragment : Fragment() {
         //if (!isApiCalling) {
         isApiCalling = true
         progressBar?.visibility = View.GONE
-        val it = model?.getHistoryVideoList(requireContext())
+        model?.getHistoryVideoList()
         //}
     }
 

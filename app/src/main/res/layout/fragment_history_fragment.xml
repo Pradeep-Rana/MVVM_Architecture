@@ -3,20 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/text_color_white">
+    android:background="@color/background_screen_color">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/dimen_5dp"
-        tools:listitem="@layout/video_list_itemview" />
+        tools:listitem="@layout/news_list_itemview" />
 
     <TextView
         android:id="@+id/noDataFound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textColor="@color/color_black"
         android:text="@string/no_data_found" />
 
     <ProgressBar

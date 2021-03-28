@@ -13,8 +13,9 @@ import android.widget.Toast
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.wipro.news.app.NewsAppApplication
+import com.bumptech.glide.request.RequestOptions
 import com.extreme.zebra.R
+import com.wipro.news.app.NewsAppApplication
 import com.wipro.news.app.db.VideoDatabase
 import com.wipro.news.app.model.NewsDataModel
 import com.wipro.news.app.view.activities.NewsDetailsActivity
@@ -33,7 +34,7 @@ class NewsListAdapter(
     @NonNull
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.video_list_itemview, parent, false)
+            .inflate(R.layout.news_list_itemview, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -47,14 +48,14 @@ class NewsListAdapter(
             holder.videoDesc.text = video.description
         else
             holder.videoDesc.text = "NA"
-        if ((video.imageHref == null) || TextUtils.isEmpty(video.imageHref)) {
-            holder.videoImage.visibility = View.GONE
-        } else {
-            holder.videoImage.visibility = View.VISIBLE
-            Glide.with(NewsAppApplication.mInstance?.applicationContext!!)
-                .load(video.imageHref)
-                .into(holder.videoImage)
-        }
+
+        val requestOptions = RequestOptions()
+        requestOptions.placeholder(R.drawable.logo)
+        requestOptions.error(R.drawable.dummy_image)
+        Glide.with(NewsAppApplication.mInstance?.applicationContext!!)
+            .load(video.imageHref)
+            .apply(requestOptions)
+            .into(holder.videoImage)
         holder.itemView.setOnClickListener {
             mContext.startActivity(
                 Intent(mContext, NewsDetailsActivity::class.java)

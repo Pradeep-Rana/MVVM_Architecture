@@ -13,6 +13,7 @@ import com.wipro.news.app.util.CONTENT_TYPE
 import com.wipro.news.app.util.showErrorLog
 import com.wipro.news.app.util.showLog
 import com.google.gson.Gson
+import com.wipro.news.app.NewsAppApplication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -61,9 +62,9 @@ class AuthViewModel() : ViewModel() {
      * Method Name : getHistoryVideoList
      * Description : This method is used for calling get video list API.
      ******************************************************************/
-    fun getHistoryVideoList(mContext: Context) {
+    fun getHistoryVideoList() {
         GlobalScope.launch(Dispatchers.IO) {
-            val chapterDatabase: VideoDatabase? = VideoDatabase.getDatabase(mContext)
+            val chapterDatabase: VideoDatabase? = VideoDatabase.getDatabase(NewsAppApplication.mInstance?.applicationContext!!)
             val result = chapterDatabase?.videoDao()?.getHistoryVideo()!!
             historyList.postValue(result)
         }

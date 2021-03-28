@@ -11,6 +11,6 @@
     <color name="text_color_pale_grey">#fbfbfd</color>
     <color name="text_color_greyish">#a7a7a7</color>
 
-    <color name="background_screen_color">#fbfbfd</color>
+    <color name="background_screen_color">#E8E8EC</color>
     <color name="dialog_background_color">#86080808</color>
 </resources>

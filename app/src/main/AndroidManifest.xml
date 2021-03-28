@@ -10,7 +10,7 @@
     <application
         android:name="com.wipro.news.app.NewsAppApplication"
         android:allowBackup="true"
-        android:hardwareAccelerated="false"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:largeHeap="true"

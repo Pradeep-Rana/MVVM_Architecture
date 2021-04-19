@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.extreme.zebra.R
+import com.wipro.news.app.R
 import com.wipro.news.app.model.NewsDataModel
 import com.wipro.news.app.view.adapters.NewsHistoryAdapter
 import com.wipro.news.app.viewmodel.AuthViewModel

@@ -10,8 +10,8 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.extreme.zebra.R
 import com.wipro.news.app.NewsAppApplication
+import com.wipro.news.app.R
 import com.wipro.news.app.model.NewsDataModel
 
 

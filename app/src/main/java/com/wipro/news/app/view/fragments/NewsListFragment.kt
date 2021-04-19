@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.extreme.zebra.R
+import com.wipro.news.app.R
 import com.wipro.news.app.model.NewsDataModel
 import com.wipro.news.app.util.isInternetAvailable
 import com.wipro.news.app.view.activities.NewsActivity
 import com.wipro.news.app.view.adapters.NewsListAdapter
 import com.wipro.news.app.viewmodel.AuthViewModel
-import kotlinx.android.synthetic.main.fragment_video_list.*
+import kotlinx.android.synthetic.main.fragment_news_list.*
 
 
 /**

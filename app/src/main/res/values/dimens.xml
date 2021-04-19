@@ -3,24 +3,14 @@
     <!--Button Radius-->
 
     <!--Text Size Dimen Values-->
-    <dimen name="text_size_14sp">14sp</dimen>
-    <dimen name="text_size_15sp">15sp</dimen>
     <dimen name="text_size_16sp">16sp</dimen>
 
     <!--Common Dimensions-->
-    <dimen name="dimen_1dp">1dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
-    <dimen name="dimen_10dp">10dp</dimen>
     <dimen name="dimen_15dp">15dp</dimen>
-    <dimen name="dimen_17dp">17dp</dimen>
-    <dimen name="dimen_20dp">20dp</dimen>
-    <dimen name="dimen_25dp">25dp</dimen>
-    <dimen name="dimen_40dp">40dp</dimen>
-    <dimen name="dimen_100dp">100dp</dimen>
     <dimen name="dimen_150dp">150dp</dimen>
     <dimen name="dimen_120dp">120dp</dimen>
 
-    <dimen name="dimen_65dp">65dp</dimen>
     <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_15dp">15dp</dimen>
     <dimen name="heading_size">22sp</dimen>

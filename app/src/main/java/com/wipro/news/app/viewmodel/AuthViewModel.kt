@@ -1,19 +1,17 @@
 package com.wipro.news.app.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
-import com.wipro.news.app.db.VideoDatabase
-import com.wipro.news.app.model.NewsDataModel
-import com.wipro.news.app.util.CONTENT_TYPE
-import com.wipro.news.app.util.showErrorLog
-import com.wipro.news.app.util.showLog
 import com.google.gson.Gson
 import com.wipro.news.app.NewsAppApplication
+import com.wipro.news.app.db.VideoDatabase
+import com.wipro.news.app.model.NewsDataModel
+import com.wipro.news.app.util.showErrorLog
+import com.wipro.news.app.util.showLog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -38,7 +36,7 @@ class AuthViewModel() : ViewModel() {
      ******************************************************************/
     fun getNewsFeedList() {
         AndroidNetworking.get("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
-            .addHeaders("Content-Type", CONTENT_TYPE)
+            .addHeaders("Content-Type", "application/json")
             .setTag("NewsFeedApi")
             .setPriority(Priority.HIGH)
             .build()
@@ -64,7 +62,8 @@ class AuthViewModel() : ViewModel() {
      ******************************************************************/
     fun getHistoryVideoList() {
         GlobalScope.launch(Dispatchers.IO) {
-            val chapterDatabase: VideoDatabase? = VideoDatabase.getDatabase(NewsAppApplication.mInstance?.applicationContext!!)
+            val chapterDatabase: VideoDatabase? =
+                VideoDatabase.getDatabase(NewsAppApplication.mInstance?.applicationContext!!)
             val result = chapterDatabase?.videoDao()?.getHistoryVideo()!!
             historyList.postValue(result)
         }

@@ -3,8 +3,8 @@ package com.wipro.news.app.view.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.extreme.zebra.R
 import com.google.android.material.tabs.TabLayout
+import com.wipro.news.app.R
 import com.wipro.news.app.view.adapters.TabsAdapter
 
 class NewsActivity : AppCompatActivity() {

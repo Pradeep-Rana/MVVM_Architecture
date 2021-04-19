@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.extreme.zebra.R
+import com.wipro.news.app.R
 
 
 class SplashActivity : AppCompatActivity() {

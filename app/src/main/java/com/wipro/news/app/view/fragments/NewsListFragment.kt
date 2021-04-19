@@ -18,7 +18,7 @@ import com.wipro.news.app.util.isInternetAvailable
 import com.wipro.news.app.view.activities.NewsActivity
 import com.wipro.news.app.view.adapters.NewsListAdapter
 import com.wipro.news.app.viewmodel.AuthViewModel
-import kotlinx.android.synthetic.main.fragment_news_list.*
+import kotlinx.android.synthetic.main.fragment_news.*
 
 
 /**
@@ -37,7 +37,7 @@ class NewsListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_news_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_news, container, false)
 
         noDataFound = view.findViewById(R.id.noDataFound)
         recyclerView = view.findViewById(R.id.recyclerView)

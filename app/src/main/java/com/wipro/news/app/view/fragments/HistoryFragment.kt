@@ -32,7 +32,7 @@ class HistoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_history_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_history, container, false)
 
         noDataFound = view.findViewById(R.id.noDataFound)
         recyclerView = view.findViewById(R.id.recyclerView)

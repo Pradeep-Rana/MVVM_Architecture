@@ -1,10 +1,10 @@
-package com.wipro.news.app.util
+package com.pn.aluminium.catalogue.util
 
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.util.Log
-import com.wipro.news.app.NewsAppApplication
+import com.pn.aluminium.catalogue.MyApplication
 
 
 /*****************************************************************
@@ -30,7 +30,7 @@ fun showErrorLog(tag_en_utils: String, message: String) {
 fun isInternetAvailable(): Boolean {
     var result = false
     val connectivityManager =
-        NewsAppApplication.mInstance?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
+        MyApplication.mInstance?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
     connectivityManager?.let {
         it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
             result = when {

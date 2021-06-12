@@ -1,4 +1,4 @@
-package com.wipro.news.app.model
+package com.pn.aluminium.catalogue.model
 
 data class NewsModel(
     val rows: List<Row>,

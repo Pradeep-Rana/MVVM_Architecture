@@ -1,4 +1,4 @@
-package com.wipro.news.app.`interface`
+package com.pn.aluminium.catalogue.`interface`
 
 interface ChoiceDialogClickListener {
     /* Listener Left side Click */

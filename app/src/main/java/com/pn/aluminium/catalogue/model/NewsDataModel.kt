@@ -1,4 +1,4 @@
-package com.wipro.news.app.model
+package com.pn.aluminium.catalogue.model
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

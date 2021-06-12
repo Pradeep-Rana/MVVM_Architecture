@@ -1,4 +1,4 @@
-package com.wipro.news.app.viewmodel
+package com.pn.aluminium.catalogue.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,11 +7,11 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import com.google.gson.Gson
-import com.wipro.news.app.NewsAppApplication
-import com.wipro.news.app.db.VideoDatabase
-import com.wipro.news.app.model.NewsDataModel
-import com.wipro.news.app.util.showErrorLog
-import com.wipro.news.app.util.showLog
+import com.pn.aluminium.catalogue.MyApplication
+import com.pn.aluminium.catalogue.db.VideoDatabase
+import com.pn.aluminium.catalogue.model.NewsDataModel
+import com.pn.aluminium.catalogue.util.showErrorLog
+import com.pn.aluminium.catalogue.util.showLog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -63,7 +63,7 @@ class AuthViewModel() : ViewModel() {
     fun getHistoryVideoList() {
         GlobalScope.launch(Dispatchers.IO) {
             val chapterDatabase: VideoDatabase? =
-                VideoDatabase.getDatabase(NewsAppApplication.mInstance?.applicationContext!!)
+                VideoDatabase.getDatabase(MyApplication.mInstance?.applicationContext!!)
             val result = chapterDatabase?.videoDao()?.getHistoryVideo()!!
             historyList.postValue(result)
         }

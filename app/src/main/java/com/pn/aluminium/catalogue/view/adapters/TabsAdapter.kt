@@ -1,10 +1,10 @@
-package com.wipro.news.app.view.adapters
+package com.pn.aluminium.catalogue.view.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.wipro.news.app.view.fragments.HistoryFragment
-import com.wipro.news.app.view.fragments.NewsListFragment
+import com.pn.aluminium.catalogue.view.fragments.HistoryFragment
+import com.pn.aluminium.catalogue.view.fragments.NewsListFragment
 
 class TabsAdapter(fm: FragmentManager, private var totalTabs: Int) : FragmentPagerAdapter(fm) {
 

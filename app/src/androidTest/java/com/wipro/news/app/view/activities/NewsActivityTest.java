@@ -9,6 +9,7 @@ import androidx.test.espresso.ViewAction;
 import androidx.test.rule.ActivityTestRule;
 
 import com.google.android.material.tabs.TabLayout;
+import com.pn.aluminium.catalogue.view.activities.HomeActivity;
 
 import org.hamcrest.Matcher;
 import org.junit.After;
@@ -24,7 +25,7 @@ import static org.hamcrest.Matchers.allOf;
 
 public class NewsActivityTest {
     @Rule
-    public ActivityTestRule<NewsActivity> testRule = new ActivityTestRule(NewsActivity.class);
+    public ActivityTestRule<HomeActivity> testRule = new ActivityTestRule(HomeActivity.class);
 
     @NonNull
     private static ViewAction selectTabAtPosition(final int position) {

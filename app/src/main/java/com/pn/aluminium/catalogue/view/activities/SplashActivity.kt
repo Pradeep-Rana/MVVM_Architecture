@@ -1,11 +1,11 @@
-package com.wipro.news.app.view.activities
+package com.pn.aluminium.catalogue.view.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.wipro.news.app.R
+import com.pn.aluminium.catalogue.R
 
 
 class SplashActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            startActivity(Intent(this, NewsActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }, 1000)
     }

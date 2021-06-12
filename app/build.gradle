@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.wipro.news.app"
+        applicationId "com.pn.aluminium.catalogue"
         minSdkVersion 25
         targetSdkVersion 30
         versionCode 1

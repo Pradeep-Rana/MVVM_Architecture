@@ -1,4 +1,4 @@
-package com.wipro.news.app.view.adapters
+package com.pn.aluminium.catalogue.view.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -14,11 +14,11 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.wipro.news.app.NewsAppApplication
-import com.wipro.news.app.R
-import com.wipro.news.app.db.VideoDatabase
-import com.wipro.news.app.model.NewsDataModel
-import com.wipro.news.app.view.activities.NewsDetailsActivity
+import com.pn.aluminium.catalogue.MyApplication
+import com.pn.aluminium.catalogue.R
+import com.pn.aluminium.catalogue.db.VideoDatabase
+import com.pn.aluminium.catalogue.model.NewsDataModel
+import com.pn.aluminium.catalogue.view.activities.ProductDetailsActivity
 
 
 class NewsListAdapter(
@@ -52,13 +52,13 @@ class NewsListAdapter(
         val requestOptions = RequestOptions()
         requestOptions.placeholder(R.drawable.logo)
         requestOptions.error(R.drawable.dummy_image)
-        Glide.with(NewsAppApplication.mInstance?.applicationContext!!)
+        Glide.with(MyApplication.mInstance?.applicationContext!!)
             .load(video.imageHref)
             .apply(requestOptions)
             .into(holder.videoImage)
         holder.itemView.setOnClickListener {
             mContext.startActivity(
-                Intent(mContext, NewsDetailsActivity::class.java)
+                Intent(mContext, ProductDetailsActivity::class.java)
                     .putExtra("VideoName", video.title)
             )
             InsertTask(mContext, video).execute()

@@ -1,4 +1,4 @@
-package com.wipro.news.app.view.adapters
+package com.pn.aluminium.catalogue.view.adapters
 
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -10,9 +10,9 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.wipro.news.app.NewsAppApplication
-import com.wipro.news.app.R
-import com.wipro.news.app.model.NewsDataModel
+import com.pn.aluminium.catalogue.MyApplication
+import com.pn.aluminium.catalogue.R
+import com.pn.aluminium.catalogue.model.NewsDataModel
 
 
 class NewsHistoryAdapter(
@@ -44,7 +44,7 @@ class NewsHistoryAdapter(
         val requestOptions = RequestOptions()
         requestOptions.placeholder(R.drawable.logo)
         requestOptions.error(R.drawable.dummy_image)
-        Glide.with(NewsAppApplication.mInstance?.applicationContext!!)
+        Glide.with(MyApplication.mInstance?.applicationContext!!)
             .load(video.imageHref)
             .apply(requestOptions)
             .into(holder.videoImage)

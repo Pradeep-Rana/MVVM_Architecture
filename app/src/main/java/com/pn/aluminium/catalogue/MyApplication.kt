@@ -1,11 +1,11 @@
-package com.wipro.news.app
+package com.pn.aluminium.catalogue
 
 import android.app.Application
 import androidx.multidex.MultiDex
 
-class NewsAppApplication : Application() {
+class MyApplication : Application() {
     companion object {
-        var mInstance: NewsAppApplication? = null
+        var mInstance: MyApplication? = null
     }
 
     override fun onCreate() {

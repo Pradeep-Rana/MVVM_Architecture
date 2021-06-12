@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wipro.news.app">
+    package="com.pn.aluminium.catalogue">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.wipro.news.app.NewsAppApplication"
+        android:name="com.pn.aluminium.catalogue.MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/logo"
@@ -19,9 +19,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name="com.wipro.news.app.view.activities.NewsDetailsActivity" />
+        <activity android:name="com.pn.aluminium.catalogue.view.activities.ProductDetailsActivity" />
         <activity
-            android:name="com.wipro.news.app.view.activities.SplashActivity"
+            android:name="com.pn.aluminium.catalogue.view.activities.SplashActivity"
             android:theme="@style/FullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.wipro.news.app.view.activities.NewsActivity"
+            android:name="com.pn.aluminium.catalogue.view.activities.HomeActivity"
             android:windowSoftInputMode="stateHidden|adjustResize" />
     </application>
 

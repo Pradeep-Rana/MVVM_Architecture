@@ -1,13 +1,13 @@
-package com.wipro.news.app.view.activities
+package com.pn.aluminium.catalogue.view.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.wipro.news.app.R
-import com.wipro.news.app.view.adapters.TabsAdapter
+import com.pn.aluminium.catalogue.R
+import com.pn.aluminium.catalogue.view.adapters.TabsAdapter
 
-class NewsActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     var tabLayout: TabLayout? = null
     var viewPager: ViewPager? = null
     override fun onCreate(savedInstanceState: Bundle?) {

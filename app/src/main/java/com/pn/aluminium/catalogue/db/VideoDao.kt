@@ -1,9 +1,9 @@
-package com.wipro.news.app.db
+package com.pn.aluminium.catalogue.db
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.wipro.news.app.model.NewsDataModel
+import com.pn.aluminium.catalogue.model.NewsDataModel
 
 @Dao
 interface VideoDao {

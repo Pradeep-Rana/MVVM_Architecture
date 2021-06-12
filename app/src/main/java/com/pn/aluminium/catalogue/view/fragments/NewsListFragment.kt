@@ -1,4 +1,4 @@
-package com.wipro.news.app.view.fragments
+package com.pn.aluminium.catalogue.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,22 +7,27 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.wipro.news.app.R
-import com.wipro.news.app.model.NewsDataModel
-import com.wipro.news.app.view.adapters.NewsHistoryAdapter
-import com.wipro.news.app.viewmodel.AuthViewModel
+import com.pn.aluminium.catalogue.R
+import com.pn.aluminium.catalogue.model.NewsDataModel
+import com.pn.aluminium.catalogue.util.isInternetAvailable
+import com.pn.aluminium.catalogue.view.activities.HomeActivity
+import com.pn.aluminium.catalogue.view.adapters.NewsListAdapter
+import com.pn.aluminium.catalogue.viewmodel.AuthViewModel
+import kotlinx.android.synthetic.main.fragment_news.*
+
 
 /**
  * A fragment representing a list of Items.
  */
-class HistoryFragment : Fragment() {
+class NewsListFragment : Fragment() {
     private var model: AuthViewModel? = null
     private var isApiCalling = false
-    private var mAdapter: NewsHistoryAdapter? = null
+    private var mAdapter: NewsListAdapter? = null
     private var noDataFound: TextView? = null
     private var recyclerView: RecyclerView? = null
     private var progressBar: ProgressBar? = null
@@ -32,7 +37,7 @@ class HistoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_history, container, false)
+        val view = inflater.inflate(R.layout.fragment_news, container, false)
 
         noDataFound = view.findViewById(R.id.noDataFound)
         recyclerView = view.findViewById(R.id.recyclerView)
@@ -43,12 +48,28 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         model = ViewModelProvider(this).get(AuthViewModel::class.java)
-        getDataFromApi()
-        observeData()
+        progressBar?.visibility = View.VISIBLE
+        getVideoList()
+        observeResponse()
+        handleSwipeToRefresh()
     }
 
-    private fun observeData() {
-        model?.historyList?.observe(requireActivity(), {
+    private fun handleSwipeToRefresh() {
+        pullToRefresh.setOnRefreshListener {
+            pullToRefresh.isRefreshing = true
+            progressBar?.visibility = View.GONE
+            getVideoList()
+        }
+    }
+
+    private fun observeResponse() {
+        model?.successTitle?.observe(requireActivity(), {
+            (activity as HomeActivity).updateTitle(it)
+        })
+        model?.successNewsResponse?.observe(requireActivity(), {
+            pullToRefresh.isRefreshing = false
+            isApiCalling = false
+            progressBar?.visibility = View.GONE
             if (it.isNullOrEmpty()) {
                 noDataFound?.text = getString(R.string.no_data_found)
                 noDataFound?.visibility = View.VISIBLE
@@ -61,28 +82,40 @@ class HistoryFragment : Fragment() {
                 updateAdapter()
             }
         })
+        model?.failureNewsResponse?.observe(requireActivity(), {
+            pullToRefresh.isRefreshing = false
+            noDataFound?.text = getString(R.string.something_went_wrong)
+            noDataFound?.visibility = View.VISIBLE
+            recyclerView?.visibility = View.GONE
+            isApiCalling = false
+            progressBar?.visibility = View.GONE
+        })
     }
 
     private fun updateAdapter() {
         recyclerView?.layoutManager = LinearLayoutManager(context, LinearLayout.VERTICAL, false)
-        mAdapter = NewsHistoryAdapter(historyVideoList)
+        mAdapter = NewsListAdapter(requireContext(), historyVideoList)
         recyclerView?.adapter = mAdapter
-    }
-
-    private fun getDataFromApi() {
-        //if (!isApiCalling) {
-        isApiCalling = true
-        progressBar?.visibility = View.GONE
-        model?.getHistoryVideoList()
-        //}
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
-            progressBar?.visibility = View.VISIBLE
+            getVideoList()
+        }
+    }
+
+    private fun getVideoList() {
+        if (isInternetAvailable()) {
             // Load your data here or do network operations here
-            getDataFromApi()
+            model?.getNewsFeedList()
+        } else {
+            pullToRefresh.isRefreshing = false
+            Toast.makeText(
+                activity,
+                getString(R.string.no_internet_connection_message),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

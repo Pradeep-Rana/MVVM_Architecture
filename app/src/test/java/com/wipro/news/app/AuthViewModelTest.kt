@@ -1,7 +1,7 @@
 package com.wipro.news.app
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.wipro.news.app.viewmodel.AuthViewModel
+import com.pn.aluminium.catalogue.viewmodel.AuthViewModel
 import junit.framework.Assert.assertNotNull
 import org.junit.After
 import org.junit.Before
